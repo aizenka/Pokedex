@@ -1,0 +1,30 @@
+body {
+  background-image: url('../../img/background.png');
+  // background-repeat: no-repeat;
+  background-color: grey;
+  font-family: Questrial, sans-serif;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+@media (max-width: 1200px) {
+  .App {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 992px) {
+  .App {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 767px) {
+  .App {
+    max-width: none;
+  }
+}
