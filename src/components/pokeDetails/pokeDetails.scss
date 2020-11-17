@@ -4,21 +4,11 @@ $font: 'Courier New', Courier, monospace;
   box-shadow: 55px;
   padding: 15px;
   font-family: $font;
-  background-color: #c10000;
+  background-color: #d40000;
   color: #ffffff;
 
   .wrapper {
+    padding: 10px;
     border: 1px solid black;
-  }
-
-  .wrapper-img {
-    margin: 10px 0px 0px 40px;
-    width: 60%;
-    border: 1px solid black;
-    border-radius: 60px;
-    text-align: center;
-    img {
-      padding: 10px;
-    }
   }
 }
