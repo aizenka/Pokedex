@@ -1,6 +1,6 @@
 <h1>Pokedex spa</h1>
 <hr>
-You can see how it looks here <https://aizenka.github.io/Pokedex/>
+You can see how it looks [here](https://aizenka.github.io/Pokedex/)
 <hr>
 Options:
 <li>filter by name
