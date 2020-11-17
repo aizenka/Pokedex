@@ -1,14 +1,45 @@
 body {
-  background-image: url('../../img/background.png');
+  background: url(../../img/49.png);
   // background-repeat: no-repeat;
-  background-color: grey;
+  background-size: 100%;
+  // background-color: grey;
   font-family: Questrial, sans-serif;
+  font-size: 17px;
+}
+
+@mixin sizes {
+  width: 70%;
+  height: auto;
+}
+
+@mixin marg {
+  margin: 0px 30px 30px;
+}
+
+.filter {
+  display: flex;
+  margin: 0px auto 30px auto;
+  padding: 20px 0;
+  @include sizes;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #c10000;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  @include sizes;
+  // height: 400px;
+  // width: 70%;
 }
 
 .App {
   max-width: 1200px;
   margin: 0px auto;
-  padding: 0px 15px;
+  // padding: 0px 15px;
 }
 
 @media (max-width: 1200px) {
@@ -21,10 +52,25 @@ body {
   .App {
     max-width: 750px;
   }
+  .main-menu {
+    .pokemon-list {
+      @include marg;
+    }
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 764px) {
   .App {
     max-width: none;
+  }
+  .filter {
+    .filter-panel {
+      margin-bottom: 10px;
+    }
+  }
+  .main-menu {
+    .pokemon-list {
+      @include marg;
+    }
   }
 }

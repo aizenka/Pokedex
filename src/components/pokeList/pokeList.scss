@@ -1,0 +1,71 @@
+$white: white;
+$black: black;
+$p: pointer;
+$font: 'Courier New', Courier, monospace;
+
+.pokemon-list {
+  border: 3px solid $black;
+  margin-right: 30px;
+  padding: 15px;
+  max-width: 70%;
+  height: 370px;
+  background-color: red;
+  border-radius: 25px;
+
+  h2 {
+    font-family: $font;
+  }
+
+  .pokemons {
+    font-family: $font;
+    border: 3px solid $black;
+    // box-shadow: 0 0 0 2px #000000 inset, 0 0 0 4px white inset;
+    // border-top-right-radius: 50px;
+    background-color: deepskyblue;
+    cursor: $p;
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+  }
+
+  .go-back-button {
+    outline: none;
+    background-color: $black;
+    color: $white;
+    padding: 3px 16px;
+    cursor: $p;
+    width: 100%;
+  }
+
+  .pagination-menu {
+    .pagination-arrow {
+      margin-top: 5px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      .pagination-button {
+        outline: none;
+        border: 1px solid $white;
+        border-radius: 20%;
+        cursor: $p;
+        padding: 3px 16px;
+        margin: 30px 20px;
+        background-color: $black;
+        color: $white;
+      }
+    }
+    .pagination-list {
+      display: flex;
+      justify-content: space-around;
+      .limit-list-item {
+        outline: none;
+        border: 1px solid $white;
+        border-radius: 20%;
+        padding: 5px;
+        cursor: $p;
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+}

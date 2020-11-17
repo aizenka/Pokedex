@@ -1,0 +1,17 @@
+.poke-options {
+  select {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    &:hover {
+      cursor: pointer;
+    }
+    option {
+      background: #c10000;
+    }
+  }
+  span {
+    color: #ffffff;
+  }
+}
