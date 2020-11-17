@@ -1,10 +1,10 @@
 import React, { useEffect, useCallback } from 'react'
 import { observer } from 'mobx-react'
-import './pokeDetails.css'
+import './pokeDetails.scss'
 
 const RandomPokemon = observer(({ store }) => {
   const updateRandomPokemon = useCallback(() => {
-    const id = Math.floor(Math.random() * 300 + 30)
+    const id = Math.floor(Math.random() * 160 + 50)
     store
       .getPokemon(id)
       .then((data) => store.setPokeStats(data))
@@ -55,14 +55,21 @@ const RandomPokemon = observer(({ store }) => {
 
   return (
     <div className="poke-info">
-      <h1>Random pokemon</h1>
       {!store.pokeStats && <span>Loading...</span>}
-      <h3>Name: {name}</h3>
-      <h3>Height: {height}</h3>
-      <h3>Weight: {weight}</h3>
-      <ul>Types: {pokeTypes}</ul>
-      <ul>Abilities: {pokeAbilities}</ul>
-      <img src={sprite} alt=""></img>
+      <div className="wrapper-info">
+        <h2>{name} card</h2>
+        <p>Height: {height}</p>
+        <p>Weight: {weight}</p>
+        <br />
+        <div className="wrapper">
+          <ul>Types:{pokeTypes}</ul>
+        </div>
+        <br />
+        <div className="wrapper">
+          <ul>Abilities: {pokeAbilities}</ul>
+        </div>
+        <img src={sprite} alt=""></img>
+      </div>
     </div>
   )
 })

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import { observer } from 'mobx-react'
-import './pokeDetails.css'
+import './pokeDetails.scss'
 // import { toJS } from "mobx"
 
 const PokeDetails = observer(({ store }) => {
@@ -47,13 +47,18 @@ const PokeDetails = observer(({ store }) => {
 
   return (
     <div className="poke-info">
-      <h1>Poke details</h1>
       {!store.pokeStats && <span>Loading...</span>}
-      <h3>Name: {name}</h3>
-      <h3>Height: {height}</h3>
-      <h3>Weight: {weight}</h3>
-      <ul>Types: {pokeTypes}</ul>
-      <ul>Abilities: {pokeAbilities}</ul>
+      <h2>{name} card</h2>
+      <p>Height: {height}</p>
+      <p>Weight: {weight}</p>
+      <br />
+      <div className="wrapper">
+        <ul>Types:{pokeTypes}</ul>
+      </div>
+      <br />
+      <div className="wrapper">
+        <ul>Abilities: {pokeAbilities}</ul>
+      </div>
       <img src={sprite} alt=""></img>
     </div>
   )

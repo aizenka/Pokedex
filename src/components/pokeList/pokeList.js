@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import { observer } from 'mobx-react'
-import './pokeList.css'
+import './pokeList.scss'
 
 const PokeList = observer(({ store }) => {
   const setPagination = useCallback(
@@ -51,40 +51,46 @@ const PokeList = observer(({ store }) => {
       : renderItems(store.pokeList)
 
   return (
-    <div className="poke-container">
-      <h1>Choose pokemon</h1>
-      <div className="list">
+    <div className="pokemon-list">
+      <h2>Select pokemon</h2>
+      <div className="pokemons">
         {/* {!store.pokeList && <span>Loading...</span>} */}
         <ul>{filtered}</ul>
       </div>
       <div className="pagination-menu">
         <div className="pagination-arrow">
-          <div className="pagination-prev" onClick={() => setPagination(-1, 0)}>
-            prev
-          </div>
-          <div className="pagination-next" onClick={() => setPagination(1, 0)}>
-            next
-          </div>
+          <button
+            className="pagination-button"
+            onClick={() => setPagination(-1, 0)}
+          >
+            <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button
+            className="pagination-button"
+            onClick={() => setPagination(1, 0)}
+          >
+            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </button>
         </div>
         <div className="pagination-list">
-          <span
-            className="pagination-list-item"
+          <button
+            className="limit-list-item"
             onClick={() => setPagination(0, 10)}
           >
             10
-          </span>
-          <span
-            className="pagination-list-item"
+          </button>
+          <button
+            className="limit-list-item"
             onClick={() => setPagination(0, 20)}
           >
             20
-          </span>
-          <span
-            className="pagination-list-item"
+          </button>
+          <button
+            className="limit-list-item"
             onClick={() => setPagination(0, 50)}
           >
             50
-          </span>
+          </button>
         </div>
       </div>
     </div>

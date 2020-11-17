@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
-import { toJS } from 'mobx'
+import './pokeList.scss'
+
 const PokeTypeList = observer(({ store }) => {
   useEffect(() => {
     store.getPokemonWithCurrentType(store.pokeTypeID).then((data) => {
@@ -23,8 +24,12 @@ const PokeTypeList = observer(({ store }) => {
       const name =
         item.pokemon.name[0].toUpperCase() + item.pokemon.name.slice(1)
       return (
-        <li key={id} onClick={() => store.onPokemonSelected(id.slice(1))}>
-          {name}
+        <li
+          className="pokelist-item"
+          key={id}
+          onClick={() => store.onPokemonSelected(id.slice(1))}
+        >
+          {id.slice(1)}.{name}
         </li>
       )
     })
@@ -32,15 +37,18 @@ const PokeTypeList = observer(({ store }) => {
 
   const filtered = updateList(store.filteredTypesList)
 
-  console.log(toJS(store.filteredTypesList))
-
   return (
-    <div className="poke_container">
+    <div className="pokemon-list">
       <h1>Poke list</h1>
-      <div className="list">
+      <div className="pokemons">
         <ul>{filtered}</ul>
       </div>
-      <button onClick={() => store.onTypeSelected('')}>Go to full list</button>
+      <button
+        className="go-back-button"
+        onClick={() => store.onTypeSelected('')}
+      >
+        Go to full list <i className="fa fa-home"></i>
+      </button>
     </div>
   )
 })

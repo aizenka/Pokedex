@@ -29,7 +29,7 @@ const PokeTypeOptions = observer(({ store }) => {
   const opt = getPokeOptions(store.pokeTypesOptions)
 
   return (
-    <div>
+    <div className="poke-options">
       <span>Type: </span>
       <select onChange={(e) => store.onTypeSelected(e.target.value)}>
         {opt}
