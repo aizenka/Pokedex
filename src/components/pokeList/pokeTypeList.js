@@ -4,9 +4,12 @@ import './pokeList.scss'
 
 const PokeTypeList = observer(({ store }) => {
   useEffect(() => {
-    store.getPokemonWithCurrentType(store.pokeTypeID).then((data) => {
-      store.setPokeTypeList(data)
-    })
+    store
+      .getPokemonWithCurrentType(store.pokeTypeID)
+      .then((data) => {
+        store.setPokeTypeList(data)
+      })
+      .catch((e) => console.log(e))
   }, [store.pokeTypeID])
 
   const extractId = (item) => {
@@ -15,9 +18,7 @@ const PokeTypeList = observer(({ store }) => {
   }
 
   const updateList = (arr) => {
-    if (!arr) {
-      return
-    }
+    if (!arr.length) return
 
     return arr.map((item) => {
       const id = extractId(item.pokemon)
@@ -41,6 +42,7 @@ const PokeTypeList = observer(({ store }) => {
     <div className="pokemon-list">
       <h2>Poke list</h2>
       <div className="pokemons">
+        {!store.filteredList.length && <span>Loading...</span>}
         <ul>{filtered}</ul>
       </div>
       <button

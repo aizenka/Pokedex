@@ -5,7 +5,7 @@ import './pokeList.scss'
 const PokeList = observer(({ store }) => {
   const setPagination = useCallback(
     (move, count) => {
-      if (store.filter === '') {
+      if (!store.filter.length) {
         if (count > 0) store.setLimit(count)
         if (move === 1) store.setOffset(store.limit, 1)
         if (move === -1) store.setOffset(store.limit, -1)
@@ -26,9 +26,7 @@ const PokeList = observer(({ store }) => {
   }, [])
 
   const renderItems = (arr) => {
-    if (!arr) {
-      return
-    }
+    if (!arr.length) return
     return arr.map((pokemon, i) => {
       const { id, name } = pokemon
       const pokeName = name[0].toUpperCase() + name.slice(1)
@@ -45,16 +43,15 @@ const PokeList = observer(({ store }) => {
     })
   }
 
-  const filtered =
-    store.filter !== ''
-      ? renderItems(store.filteredFullList)
-      : renderItems(store.pokeList)
+  const filtered = store.filter.length
+    ? renderItems(store.filteredFullList)
+    : renderItems(store.pokeList)
 
   return (
     <div className="pokemon-list">
-      {!store.pokeList && <span>Loading...</span>}
       <h2>Select pokemon</h2>
       <div className="pokemons">
+        {!store.pokeList.length && <span>Loading...</span>}
         <ul>{filtered}</ul>
       </div>
       <div className="pagination-menu">

@@ -7,15 +7,11 @@ const PokeTypeOptions = observer(({ store }) => {
     store.getAllTypes().then((data) => {
       store.setPokeTypesOptions(data)
     })
-  }, [store])
+  }, [])
 
   const getPokeOptions = (arr) => {
-    if (!arr) {
-      return
-    }
-    if (store.pokeTypeId === 0) {
-      return
-    }
+    if (!arr.length) return
+    if (store.pokeTypeId === 0) return
     return arr.map((optionItem, i) => {
       const { id, name } = optionItem
       return (

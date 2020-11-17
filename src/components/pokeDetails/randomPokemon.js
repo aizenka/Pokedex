@@ -1,15 +1,15 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 import './pokeDetails.scss'
 
 const RandomPokemon = observer(({ store }) => {
-  const updateRandomPokemon = useCallback(() => {
+  const updateRandomPokemon = () => {
     const id = Math.floor(Math.random() * 160 + 50)
     store
       .getPokemon(id)
       .then((data) => store.setPokeStats(data))
       .catch((e) => console.log(e))
-  }, [store.pokeStats])
+  }
 
   useEffect(() => {
     updateRandomPokemon()
@@ -22,9 +22,7 @@ const RandomPokemon = observer(({ store }) => {
   const { name, abilities, types, height, weight, sprite } = store.pokeStats
 
   const renderTypes = () => {
-    if (!types) {
-      return
-    }
+    if (!types) return
     const res = types.map((item) => {
       return (
         <li key={item.type.url} className="pokelist-item">
@@ -36,9 +34,7 @@ const RandomPokemon = observer(({ store }) => {
   }
 
   const renderAbilities = () => {
-    if (!abilities) {
-      return
-    }
+    if (!abilities) return
 
     const res = abilities.map((item) => {
       return (
@@ -55,7 +51,7 @@ const RandomPokemon = observer(({ store }) => {
 
   return (
     <div className="poke-info">
-      {!store.pokeStats && <span>Loading...</span>}
+      {store.pokeStats.length && <span>Loading...</span>}
       <div className="wrapper-info">
         <h2>{name} card</h2>
         <p>Height: {height}</p>

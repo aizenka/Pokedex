@@ -1,15 +1,15 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 import './pokeDetails.scss'
 // import { toJS } from "mobx"
 
 const PokeDetails = observer(({ store }) => {
-  const updatePokemon = useCallback(() => {
+  const updatePokemon = () => {
     store
       .getPokemon(store.pokeID)
       .then((data) => store.setPokeStats(data))
       .catch((e) => console.log(e))
-  }, [store.pokeID])
+  }
 
   useEffect(() => {
     if (store.pokeID) updatePokemon()
@@ -18,9 +18,7 @@ const PokeDetails = observer(({ store }) => {
   const { name, abilities, types, height, weight, sprite } = store.pokeStats
 
   const renderTypes = () => {
-    if (!types) {
-      return
-    }
+    if (!types) return
     const res = types.map((item) => {
       return (
         <li key={item.type.url} className="pokelist-item">
@@ -32,9 +30,7 @@ const PokeDetails = observer(({ store }) => {
   }
 
   const renderAbilities = () => {
-    if (!abilities) {
-      return
-    }
+    if (!abilities) return
 
     const res = abilities.map((item) => {
       return <li key={item.ability.url}>- {item.ability.name}</li>
@@ -47,7 +43,7 @@ const PokeDetails = observer(({ store }) => {
 
   return (
     <div className="poke-info">
-      {!store.pokeStats && <span>Loading...</span>}
+      {store.pokeStats.length && <span>Loading...</span>}
       <h2>{name} card</h2>
       <p>Height: {height}</p>
       <p>Weight: {weight}</p>
