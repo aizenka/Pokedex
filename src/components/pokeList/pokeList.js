@@ -52,9 +52,9 @@ const PokeList = observer(({ store }) => {
 
   return (
     <div className="pokemon-list">
+      {!store.pokeList && <span>Loading...</span>}
       <h2>Select pokemon</h2>
       <div className="pokemons">
-        {/* {!store.pokeList && <span>Loading...</span>} */}
         <ul>{filtered}</ul>
       </div>
       <div className="pagination-menu">

@@ -39,7 +39,7 @@ const PokeTypeList = observer(({ store }) => {
 
   return (
     <div className="pokemon-list">
-      <h1>Poke list</h1>
+      <h2>Poke list</h2>
       <div className="pokemons">
         <ul>{filtered}</ul>
       </div>
