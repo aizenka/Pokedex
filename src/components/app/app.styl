@@ -1,18 +1,16 @@
 body {
   background: url(../../img/background-pokemon.png);
-  // background-repeat: no-repeat;
   background-size: 100%;
-  // background-color: grey;
   font-family: Questrial, sans-serif;
   font-size: 17px;
 }
 
-@mixin sizes {
+sizes() {
   width: 70%;
   height: auto;
 }
 
-@mixin marg {
+marg() {
   margin: 0px 30px 30px;
 }
 
@@ -20,7 +18,7 @@ body {
   display: flex;
   margin: 0px auto 30px auto;
   padding: 20px 0;
-  @include sizes;
+  sizes();
   justify-content: center;
   flex-wrap: wrap;
   background-color: #d40000;
@@ -31,7 +29,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  @include sizes;
+  sizes();
 }
 
 .App {
@@ -51,7 +49,7 @@ body {
   }
   .main-menu {
     .pokemon-list {
-      @include marg;
+      marg();
     }
   }
 }
@@ -67,7 +65,7 @@ body {
   }
   .main-menu {
     .pokemon-list {
-      @include marg;
+      marg();
     }
   }
 }

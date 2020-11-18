@@ -1,10 +1,10 @@
-$white: #fff;
-$black: #000;
-$p: pointer;
-$font: 'Courier New', Courier, monospace;
+white = #fff;
+black = #000;
+p = pointer;
+font = 'Courier New', Courier, monospace;
 
 .pokemon-list {
-  border: 3px solid $black;
+  border: 3px solid black;
   margin-right: 30px;
   padding: 15px;
   max-width: 70%;
@@ -13,16 +13,16 @@ $font: 'Courier New', Courier, monospace;
   border-radius: 25px;
 
   h2 {
-    font-family: $font;
+    font-family: font;
   }
 
   .pokemons {
-    font-family: $font;
-    border: 3px solid $black;
+    font-family: font;
+    border: 3px solid black;
     // box-shadow: 0 0 0 2px #000000 inset, 0 0 0 4px white inset;
     // border-top-right-radius: 50px;
     background-color: deepskyblue;
-    cursor: $p;
+    cursor: p;
     width: 100%;
     height: 200px;
     overflow: auto;
@@ -30,10 +30,10 @@ $font: 'Courier New', Courier, monospace;
 
   .go-back-button {
     outline: none;
-    background-color: $black;
-    color: $white;
+    background-color: black;
+    color: white;
     padding: 3px 16px;
-    cursor: $p;
+    cursor: p;
     width: 100%;
   }
 
@@ -44,14 +44,15 @@ $font: 'Courier New', Courier, monospace;
       display: flex;
       justify-content: space-around;
       .pagination-button {
+        width auto;
         outline: none;
-        border: 1px solid $white;
+        border: 1px solid white;
         border-radius: 20%;
-        cursor: $p;
+        cursor: p;
         padding: 3px 16px;
         margin: 30px 20px;
-        background-color: $black;
-        color: $white;
+        background-color: black;
+        color: white;
       }
     }
     .pagination-list {
@@ -59,12 +60,12 @@ $font: 'Courier New', Courier, monospace;
       justify-content: space-around;
       .limit-list-item {
         outline: none;
-        border: 1px solid $white;
+        border: 1px solid white;
         border-radius: 20%;
         padding: 5px;
-        cursor: $p;
-        background-color: $black;
-        color: $white;
+        cursor: p;
+        background-color: black;
+        color: white;
       }
     }
   }
