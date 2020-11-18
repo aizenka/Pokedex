@@ -6,7 +6,7 @@ import pokeState from '../Store'
 import { PokeDetails, RandomPokemon } from '../pokeDetails'
 import PokeTypeOptions from '../pokeTypeOptions'
 import SearchPanel from '../searchPanel'
-import './App.scss'
+import './app.styl'
 
 const App = () => {
   const showPokeDetailsComponent = pokeState.pokeID ? (

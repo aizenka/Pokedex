@@ -1,6 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import './searchPanel.scss'
+import './searchPanel.styl'
 
 const SearchPanel = observer(({ store }) => {
   const filterNames = (value) => {

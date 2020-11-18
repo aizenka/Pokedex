@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
-import './pokeList.scss'
+import './pokeList.styl'
 
 const PokeTypeList = observer(({ store }) => {
   useEffect(() => {

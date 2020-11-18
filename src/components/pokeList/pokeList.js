@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import { observer } from 'mobx-react'
-import './pokeList.scss'
+import './pokeList.styl'
 
 const PokeList = observer(({ store }) => {
   const setPagination = useCallback(

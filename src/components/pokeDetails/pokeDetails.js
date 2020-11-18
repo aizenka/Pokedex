@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
-import './pokeDetails.scss'
-// import { toJS } from "mobx"
+import './pokeDetails.styl'
 
 const PokeDetails = observer(({ store }) => {
   const updatePokemon = () => {

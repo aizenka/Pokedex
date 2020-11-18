@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
-import './pokeDetails.scss'
+import './pokeDetails.styl'
 
 const RandomPokemon = observer(({ store }) => {
   const updateRandomPokemon = () => {
