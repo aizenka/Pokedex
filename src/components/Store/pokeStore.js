@@ -32,6 +32,7 @@ class PokeStore {
       offset: observable,
       onPokemonSelected: action,
       setPokeStats: action,
+      setPokeTypeList: action,
       setPokeList: action,
       setPokeTypesOptions: action,
       onTypeSelected: action,
